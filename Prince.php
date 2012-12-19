@@ -127,10 +127,10 @@ class Prince
 	{
 		while (!feof($pipe))
 		{
-		    $line = fgets($pipe);
+			$line = fgets($pipe);
 
-		    if($line)
-		    {
+		    	if($line)
+		    	{
 				$tag = substr($line, 0, 3);
 				$body = substr($line, 4);
 
@@ -162,7 +162,7 @@ class Prince
 		    0 => array("pipe", "r"),
 		    1 => array("pipe", "w"),
 		    2 => array("pipe", "w")
-	    );
+	    	);
 	
 		if(!is_resource($process = proc_open($this->_args, $descriptorspec, $pipes))) return false;
 		
